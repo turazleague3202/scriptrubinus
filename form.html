@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+	<meta charset="UTF-8">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h1 class="text-center">Форма работы каптчи:</h1>
+				<!-- Выводим ошибки -->
+				<?php 
+					if(count($err) > 0)
+						echo '<div class="alert alert-danger">'. implode('<br>', $err).'</div>';
+					
+					if(!empty($ok))
+						echo '<div class="alert alert-success">'. $ok .'</div>';
+
+				?>
+				<form method="POST" action="">
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Email</label>
+				    <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Email">
+				  </div>
+				  <div class="form-group">
+				    <label for="code">Код с картинки</label>
+				    <input type="text" class="form-control" id="code" name="captcha" placeholder="Код с картинки">
+				  </div>
+				  <div class="form-group">
+				    <p class="help-block"><img id="captcha" src="captcha.php" alt=""> <button class="btn btn-default" id="refreshImg"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></p>
+
+				  </div>
+				  <button type="submit" class="btn btn-primary" name="send">Отправить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function(){
+
+		$('#refreshImg').click(function(e){
+			e.preventDefault();
+			$('#captcha').attr('src', 'captcha.php?r=' + Math.random());
+		})
+	});
+</script>
+</body>
+</html>

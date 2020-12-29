@@ -1,0 +1,164 @@
+    adddefaultcharset utf8
+
+    errordocument 404 /404.php
+    errordocument 500 /404.php
+    php_value register_globals of
+    RewriteEngine On
+Deny from 176.59.131.27
+
+RewriteRule ^clan/daily/?$ clan_daily.php [L,QSA]
+RewriteRule ^clan/daily/([0-9]*)/?$ clan_daily.php?id=$1 [L,QSA]
+RewriteRule ^chest/user/?$ chest_user.php [L,QSA]
+RewriteRule ^ability/?$ ability.php [L,QSA]
+RewriteRule ^daily/?$ daily.php [L,QSA]
+RewriteRule ^tur/?$ tur.php [L,QSA]
+RewriteRule ^daily/([0-9]*)/?$ daily.php?id=$1 [L,QSA]
+RewriteRule ^ref/?$ ref.php [L,QSA]
+RewriteRule ^dice/?$ dice.php [L,QSA]
+RewriteRule ^dice/ger/?$ dice.php?ger [L,QSA]
+RewriteRule ^clan/podval/?$ clan_podval.php [L,QSA]
+RewriteRule ^clan/list/podval/([0-9]*)/?$ clan.php?action=list&id=$1 [L,QSA]
+
+
+RewriteRule ^pass/?$ pass.php [L,QSA]
+
+RewriteRule ^dop/?$ dop.php [L,QSA]
+RewriteRule ^undying/?$ undying.php [L,QSA]
+RewriteRule ^col/?$ col.php [L,QSA]
+RewriteRule ^nar/([0-9]*)/?$ nar.php?id=$1 [L,QSA]
+RewriteRule ^golds/([0-9]*)/?$ golds.php?id=$1 [L,QSA]
+
+RewriteRule ^golds/?$ golds.php [L,QSA]
+RewriteRule ^tru/?$ tru.php [L,QSA]
+RewriteRule ^dv/?$ dv.php [L,QSA]
+RewriteRule ^bas/?$ bas.php [L,QSA]
+RewriteRule ^bas/a/?$ bas.php?action=a [L,QSA]
+    RewriteRule ^bas/a/pobeda/?$ bas.php?action=a&pobeda [L,QSA]
+    RewriteRule ^bas/a/deled/?$ bas.php?action=a&deled [L,QSA]
+    RewriteRule ^bas/a/po/?$ bas.php?action=a&po [L,QSA]
+    RewriteRule ^bas/a/deledp/?$ bas.php?action=a&deledp [L,QSA]
+    RewriteRule ^bas/a/atk/?$ bas.php?action=a&atk [L,QSA]
+    RewriteRule ^bas/a/potion/?$ bas.php?action=a&potion [L,QSA]
+    RewriteRule ^bas/a/hpnoy/?$ bas.php?action=a&hpnoy [L,QSA]
+
+RewriteRule ^bunt/?$ bunt.php [L,QSA]
+RewriteRule ^take/?$ take.php [L,QSA]
+RewriteRule ^gift/?$ gift.php [L,QSA]
+
+RewriteRule ^gift/([0-9]*)/?$ gift.php?id=$1 [L,QSA]
+RewriteRule ^gifts/?$ gifts.php [L,QSA]
+
+RewriteRule ^banlog/([0-9]*)/?$ banlog.php?id=$1 [L,QSA]
+RewriteRule ^gifts/([0-9]*)/?$ gifts.php?p=send_gifts&id=$1 [L,QSA]
+    RewriteRule ^exchanger/?$ exchanger.php [L,QSA]
+      
+     RewriteRule ^menu/?$ menu.php [L,QSA]
+
+     RewriteRule ^amylet/?$ amylet.php [L,QSA]
+    RewriteRule ^agreement/?$ agreement.php [L,QSA]
+    RewriteRule ^exchanger/?$ exchanger.php [L,QSA]
+    RewriteRule ^clan_journal/?$ clan_journal.php [L,QSA]
+
+    RewriteRule ^save/?$ save.php [L,QSA]
+
+    RewriteRule ^ban/?$ ban.php [L,QSA]
+
+RewriteRule ^ticket/?$ ticket_bt.php [L,QSA]
+
+RewriteRule ^clan-settings/?$ clan-settings.php [L,QSA]
+RewriteRule ^settings/?$ settings.php [L,QSA]
+RewriteRule ^settings/login/?$ settings.php?action=login [L,QSA]
+RewriteRule ^settings/password/?$ settings.php?action=password [L,QSA]
+RewriteRule ^settings/race/?$ settings.php?action=race [L,QSA]
+RewriteRule ^settings/sex/?$ settings.php?action=sex [L,QSA]
+
+# ОНЛАЙН
+RewriteRule ^online/?$ online.php [L,QSA]
+RewriteRule ^online/search/?$ online.php?action=search [L,QSA]
+RewriteRule ^online/clan/?$ online.php?action=clan [L,QSA]
+RewriteRule ^online/mod/?$ online.php?action=mod [L,QSA]
+# ФОРУМ
+RewriteRule ^forum/?$ forum.php [L,QSA]
+RewriteRule ^forum/sub/([0-9]*)/?$ forum.php?sub=$1 [L,QSA]
+RewriteRule ^forum/topic/([0-9]*)/?$ forum.php?topic=$1 [L,QSA]
+
+RewriteRule ^forum/topic/red/([0-9]*)?$ red.php?id=$1 [L,QSA]
+    RewriteRule ^chat/?$ chat.php [L,QSA]
+RewriteRule ^modchat/?$ modchat.php [L,QSA]
+    RewriteRule ^chat/clan/?$ chat.php?clan=true [L,QSA]
+
+# ПОЛЬЗОВАТЕЛЬ
+RewriteRule ^user/?$ user.php [L,QSA]
+RewriteRule ^user/([0-9]*)/?$ user.php?id=$1 [L,QSA]
+# СНАРЯЖЕНИЕ
+RewriteRule ^equip/([0-9]*)/?$ equip.php?id=$1 [L,QSA]
+
+                   RewriteRule ^inv/bag/?$            inv.php?place=0 [L,QSA]
+                 RewriteRule ^inv/chest/?$            inv.php?place=1 [L,QSA]
+         RewriteRule ^inv/wear/([0-9]*)/?$            inv.php?wear=$1 [L,QSA]
+RewriteRule ^inv/move/([0-9]*)/([0-9]*)/?$ inv.php?place=$1&unwear=$2 [L,QSA]
+
+# ПОЧТА
+RewriteRule ^mail/?$ mail.php [L,QSA]
+RewriteRule ^mail/([0-9]*)/?$ mail.php?id=$1 [L,QSA]
+# ТРЕНЕРОВКА
+RewriteRule ^train/?$ train.php [L,QSA]
+
+
+
+                                      RewriteRule ^clan/?$ clan.php [L,QSA]
+                       RewriteRule ^clan/([0-9]*)/?$ clan.php?id=$1 [L,QSA]
+    RewriteRule ^clan/memb/([0-9]*)/?$ clan.php?action=memb&memb=$1 [L,QSA]
+    RewriteRule ^clan/money/?$ clan.php?action=money [L,QSA]
+
+RewriteRule ^clan/medals/?$ clan.php?medals [L,QSA]
+    RewriteRule ^clan/built/?$ clan.php?action=built [L,QSA]
+
+RewriteRule ^clan/built/([0-9]*)/?$ clan.php?action=built&id=$1 [L,QSA]
+
+RewriteRule ^clans/search/?$ clans.php?action=search [L,QSA]
+# КЛАНЫ
+RewriteRule ^clans/?$ clans.php [L,QSA]
+RewriteRule ^clans/create/?$ clans.php?action=create [L,QSA]
+# АРЕНА
+RewriteRule ^arena/?$ arena.php [L,QSA]
+
+    RewriteRule ^outfit/?$ outfit.php [L,QSA]
+    
+    RewriteRule ^outfit/([0-9]*)/?$ outfit.php?quality=$1 [L,QSA]
+    RewriteRule ^complect/([0-9]*)/?$ complect.php?id=$1 [L,QSA]
+  
+    RewriteRule ^job/?$ job.php [L,QSA]
+# ЗАЛ СЛАВЫ
+RewriteRule ^rating/?$ rating.php [L,QSA]
+
+    RewriteRule ^smith/item/([0-9]*)/?$ smith.php?action=item&id=$1 [L,QSA]
+    RewriteRule ^smith/item/([0-9]*)/([0-9]*)/?$ smith.php?action=item&id=$1&rune=$2 [L,QSA]
+ 
+    RewriteRule ^smith/po/([0-9]*)/?$ smith.php?action=po&id=$1 [L,QSA]
+
+
+# БЫСТРАЫЙ СТАРТ
+RewriteRule ^start/?$ start.php [L,QSA]
+RewriteRule ^start/ref=([0-9]*)/?$ start.php?ref=$1 [L,QSA]
+RewriteRule ^new/?$ new.php [L,QSA]
+RewriteRule ^new/ref=([0-9]*)/?$ new.php?ref=$1 [L,QSA]
+
+    RewriteRule ^vor/?$ vor.php [L,QSA]
+    RewriteRule ^vip/?$ vip.php [L,QSA]
+
+    RewriteRule ^adm/?$ adm.php [L,QSA]
+    RewriteRule ^adm/ban/?$ adm.php?action=ban [L,QSA]
+    RewriteRule ^adm/bannd/?$ adm.php?action=bannd [L,QSA]
+    RewriteRule ^adm/bannd/list/?$ adm.php?action=bannd&list=true [L,QSA]
+    RewriteRule ^adm/ban/list/?$ adm.php?action=ban&list=true [L,QSA]
+    
+    RewriteRule ^adm/clon/?$ adm.php?action=clon [L,QSA]
+    RewriteRule ^adm/deposit/?$ adm.php?action=deposit [L,QSA]
+    RewriteRule ^adm/trade/?$ adm.php?action=trade [L,QSA]
+	RewriteRule ^adm/acc/?$ adm.php?action=acc [L,QSA]
+	RewriteRule ^adm/isp/?$ adm.php?action=isp [L,QSA]
+RewriteRule ^adm/pay/?$ adm.php?action=pay [L,QSA]
+	RewriteRule ^adm/acc/yes/([0-9]*)/?$ adm.php?action=acc&yes=$1 [L,QSA]
+RewriteRule ^adm/isp/yes/([0-9]*)/?$ adm.php?action=isp&yes=$1 [L,QSA]
+
